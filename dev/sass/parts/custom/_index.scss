@@ -14,7 +14,7 @@ $container-max-widths: (
 header{
   .navbar {
       min-height: 80px;
-    @media(max-width: 767px){
+    @media(max-width: 991px){
       padding-left:0;
       padding-right:0;
       .navbar-toggler{
@@ -67,7 +67,7 @@ header{
       display: none;
     }
     .navbar-brand {
-      @media(max-width: 767px){
+      @media(max-width: 991px){
         padding-top: 0;
         padding-bottom: 0;
         z-index: 999;
@@ -105,9 +105,17 @@ header{
 #hero-banner{
   background: url('../img/pl-hero-2x.jpg') no-repeat center center;
   background-size: cover;
+
   @media(max-width: 767px){
     padding: 0;
     background:#000;
+    .container{
+      max-width:100%!important;
+      .right-content{
+        max-width: 540px;
+        margin:0 auto;
+      }
+    }
   }
   @media(min-width: 960px){
     max-height: 350px;
@@ -199,6 +207,9 @@ header{
       border-color: transparent;
       line-height: 50px;
       padding:0;
+      &:hover{
+        background-image:linear-gradient(to left, #a77168, #a77168);
+      }
       @media(max-width: 767px){
         margin-top:16px;
         transform: translateY(25px);
@@ -446,6 +457,9 @@ header{
         padding: 0;
         margin-top: 59px;
         margin-bottom: 59px;
+        &:hover{
+          background-image:linear-gradient(to left, #a77168, #a77168);
+        }
       }
     }
   }

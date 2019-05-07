@@ -94,7 +94,7 @@ yarn start
 ## Commands
 ```bash
 yarn <script> //alternative: npm run <script>
-yarn start //Run development mode
-yarn build //Compiles your App for production
+yarn start //Run development mode // alternative "gulp" ( will run default task) or gulp + task from tasks/ 
+yarn build //Compiles your App for //alternative: npm run-script build
 yarn deploy //Push production version on remote server using FTP
 ```
