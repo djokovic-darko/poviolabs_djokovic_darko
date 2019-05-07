@@ -16,17 +16,18 @@
     </head>
     <body>
 	<header>
-		<div class="container">
+		<div class="container" id="navigation-bar">
 			<nav class="navbar navbar-expand-lg navbar-light bg-white pl-lg-0 pr-lg-0">
                 <a class="navbar-brand" href="#">
                     <img src="./assets/img/svg/pl-logo.svg" class="img-fluid"/>
 				</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" onclick="openNav()" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
 
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <div class="navbar-collapse overlay" id="myNav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0 overlay-content">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">
                             Flowers

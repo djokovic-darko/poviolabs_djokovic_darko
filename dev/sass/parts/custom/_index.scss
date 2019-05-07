@@ -10,17 +10,74 @@ $container-max-widths: (
 ) !default;
 
 //header
+
 header{
   .navbar {
-    @media(min-width: 960px) {
       min-height: 80px;
-    }
+    @media(max-width: 767px){
+      padding-left:0;
+      padding-right:0;
+      .navbar-toggler{
+          border-color: transparent;
+          &:focus,&:active,&:hover{
+            border: 0;
+            outline: none;
+          }
+      }
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.5s;
+        display: flex;
+        align-items: center;
+        .overlay-content {
+          position: relative;
+          top: 0;
+          width: 100%;
+          text-align: left;
+          height: auto;
+          overflow: hidden;
+          margin-top: 0!important;
+          li{
+            width: 100%;
+            margin-bottom: 30px;
+          }
 
+        }
+        .closebtn {
+          background: url(../img/svg/pl-icon-close.svg) no-repeat center center;
+          background-size: contain;
+          display: block;
+          position: absolute;
+          top: 28px;
+          right: 28px;
+          width: 24px;
+          height:24px;
+
+        }
+      }
+    }
+    .closebtn{
+      display: none;
+    }
     .navbar-brand {
+      @media(max-width: 767px){
+        padding-top: 0;
+        padding-bottom: 0;
+        z-index: 999;
+      }
       img {
         @media(min-width: 960px) {
           width: 151px;
           height: 27px;
+          z-index: 999;
+          margin-top:-15px;
         }
       }
     }
@@ -48,6 +105,10 @@ header{
 #hero-banner{
   background: url('../img/pl-hero-2x.jpg') no-repeat center center;
   background-size: cover;
+  @media(max-width: 767px){
+    padding: 0;
+    background:#000;
+  }
   @media(min-width: 960px){
     max-height: 350px;
     padding-top:50px;
@@ -55,13 +116,49 @@ header{
   .left-image{
     width: 280px;
     height:350px;
+    @media(max-width: 767px){
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #000;
+      opacity:.75;
+
+    }
   }
   .right-content{
     @media(min-width: 960px){
       margin-bottom:100px;
     }
+    @media(max-width: 767px){
+      height: 350px;
+      align-items: flex-end !important;
+      display: flex;
+    }
     .sighthings{
-
+      .star{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background: url('../img/star-white.png');
+        background-size: 30px 30px;
+      }
+      .sightthings-count{
+          font-family: 'Ubuntu', sans-serif;
+          font-size: 12px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          letter-spacing: normal;
+          text-align: center;
+          width: 103px;
+          height: 30px;
+          border-radius: 20px;
+          background-color: rgba(0, 0, 0, 0.2);
+          color:#fff;
+          line-height: 30px;
+          margin-left:10px;
+      }
     }
     h1{
         font-family: 'Ubuntu', sans-serif;
@@ -102,6 +199,10 @@ header{
       border-color: transparent;
       line-height: 50px;
       padding:0;
+      @media(max-width: 767px){
+        margin-top:16px;
+        transform: translateY(25px);
+      }
     }
   }
 }
@@ -109,6 +210,9 @@ header{
   margin-top:50px;
   ul{
     margin-top:50px;
+    @media(max-width: 767px){
+      margin-top:60px;
+    }
     li{
         font-family: 'Ubuntu', sans-serif;
         font-size: 13px;
@@ -237,81 +341,93 @@ header{
     }
   }
 }
-#myAccount{
-  .modal-dialog{
+#myAccount {
+  .modal-dialog {
     max-width: 600px;
-    .modal-content{
-      border-radius: 0!important;
+
+    .modal-content {
+      border-radius: 0 !important;
     }
-    .modal-header{
-      border-radius: 0!important;
-      border:0;
+
+    .modal-header {
+      border-radius: 0 !important;
+      border: 0;
       max-height: 60px;
       height: 60px;
     }
-    .personal-info{
-      padding:0 111px;
-      .card-info-data{
+
+    .personal-info {
+      padding: 0 111px;
+
+      .card-info-data {
         margin-bottom: 41px;
-        img{
+
+        img {
           margin-right: 30px;
         }
-        p{
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 25px;
-            font-weight: 300;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1;
-            letter-spacing: normal;
-            color: #334144;
-            small{
-                font-family: 'Ubuntu', sans-serif;
-                font-size: 13px;
-                font-weight: normal;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: 1;
-                letter-spacing: normal;
-                color: #949ea0;
-                margin-top:6px;
-            }
-        }
-      }
-      .personal-info_input{
+
+        p {
           font-family: 'Ubuntu', sans-serif;
-          font-size: 18px;
-          font-weight: normal;
+          font-size: 25px;
+          font-weight: 300;
           font-style: normal;
           font-stretch: normal;
-          line-height: 0.72;
+          line-height: 1;
           letter-spacing: normal;
           color: #334144;
-          margin-bottom: 31px;
-          padding:0;
-          &:last-child{
-            margin-bottom:0;
-          }
-        small{
+
+          small {
             font-family: 'Ubuntu', sans-serif;
-            font-size: 10px;
+            font-size: 13px;
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
             line-height: 1;
             letter-spacing: normal;
             color: #949ea0;
-            display:block;
-            margin-bottom: 16px;
+            margin-top: 6px;
+          }
+        }
+      }
+
+      .personal-info_input {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 0.72;
+        letter-spacing: normal;
+        color: #334144;
+        margin-bottom: 31px;
+        padding: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        small {
+          font-family: 'Ubuntu', sans-serif;
+          font-size: 10px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          color: #949ea0;
+          display: block;
+          margin-bottom: 16px;
         }
       }
     }
-    .modal-footer{
-      border:0;
-      border-radius: 0!important;
-      padding-top:0;
-      padding-bottom:0;
-      .btn-primary{
+
+    .modal-footer {
+      border: 0;
+      border-radius: 0 !important;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      .btn-primary {
         font-family: 'Ubuntu', sans-serif;
         font-size: 14px;
         font-weight: 500;
@@ -327,10 +443,18 @@ header{
         background-image: linear-gradient(to left, #ecbcb3, #eaa79e);
         border-color: transparent;
         line-height: 50px;
-        padding:0;
+        padding: 0;
         margin-top: 59px;
         margin-bottom: 59px;
       }
     }
+  }
+}
+
+@media screen and (max-height: 450px) {
+
+  .overlay .closebtn {
+    top: 15px;
+    right: 35px;
   }
 }
