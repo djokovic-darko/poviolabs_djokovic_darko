@@ -10,7 +10,8 @@
 					<div class="row">
 						<div class="col-md-6 text-left">
 							<div class="sighthings">
-
+								<div class="star"></div>
+								<div class="sightthings-count"></div>
 							</div>
 							<h1 class="h3 ml-0">
 								Balloon Flower
@@ -171,4 +172,48 @@
 		</div>
     </div>
     <!-- ALBUM GRID end here -->
+
+
+    <!-- My Account Modal  -->
+    <div class="modal fade" id="myAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <div class="modal-body personal-info">
+                <div class="card-info-data d-flex align-items-center">
+            	    <img src="./assets/img/menu-profile-holder-2x.jpg" width="80px" height="80px" class="img-fluid d-inline-block" />
+            	    <div class="d-inline-block">
+            	        <p class="mb-0">
+            	        Michael Berry
+            	        <small class="d-block">47 sightings</small>
+            	        </p>
+            	    </div>
+            	</div>
+				<p class="text-left personal-info_input">
+					<small>First Name</small>
+					Michael
+				</p>
+				<p class="text-left personal-info_input">
+					<small>Last Name</small>
+					Berry
+				</p>
+				<p class="text-left personal-info_input">
+					<small>Date of birth</small>
+					May 20, 1980
+				</p>
+				<p class="text-left personal-info_input">
+					<small>Email address</small>
+					michael.berry@gmail.com
+				</p>
+            </div>
+          <div class="modal-footer text-center align-items-center">
+            <a class="btn btn-primary mx-auto text-white" data-dismiss="modal">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
 @@include('footer.html')
